@@ -1,0 +1,21 @@
+
+syntax = "proto3";            //指定协议版本
+ 
+package myservices;
+ 
+service forumService{        //定义服务名
+    rpc getforum(forumRequest) returns (forumResponse){} 
+}
+
+message forumRequest{        //声明方法中参数的类型    
+    int32   id       = 1;
+    string  title    = 2; //标题
+    string  content  = 3; //内容
+    int32 channel  = 4; //频道
+    int64   createdAt= 5; //创建时间
+}
+
+message forumResponse{        //声明返回结果的类型
+    int32   id   = 1;
+    string  name = 2;
+}
